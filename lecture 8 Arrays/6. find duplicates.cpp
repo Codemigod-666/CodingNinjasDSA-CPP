@@ -11,8 +11,8 @@ int duplicateNumber(int *arr, int size)
 }
 
 // method 2 this is quite a lengthy approach
-but its quite logical.
-though first one is easy and straight.
+// but its quite logical.
+// though first one is easy and straight.
 
 int duplicateNumber(int *arr, int size)
 {	
