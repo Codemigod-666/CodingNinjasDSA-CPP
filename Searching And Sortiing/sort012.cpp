@@ -1,6 +1,6 @@
 //we have to sort the zeroes , ones and twos in the given array
-
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 // this  is the solution function for the given array
@@ -36,46 +36,32 @@ void sort012(int *arr, int n)
 
 // this is the already given main code of the problem:::::::::::::::::::::::::::::::::::::
 
-int main(){
+
+
+int main()
+{
 	int t;
 	cin >> t;
-
 	while (t--)
 	{
-		int size1;
-		cin >> size1;
+		int size;
 
-		int *input1 = new int[size1];
+		cin >> size;
+		int *arr = new int[size];
 
-		for (int i = 0; i < size1; ++i)
+		for (int i = 0; i < size; i++)
 		{
-			cin >> input1[i];
+			cin >> arr[i];
 		}
 
-		int size2;
-		cin >> size2;
+		sort012(arr, size);
 
-		int *input2 = new int[size2];
-
-		for (int i = 0; i < size2; ++i)
+		for (int i = 0; i < size; i++)
 		{
-			cin >> input2[i];
+			cout << arr[i] << " ";
 		}
 
-		int outsize = 1 + max(size1, size2);
-
-		int *output = new int[outsize];
-
-		sumOfTwoArrays(input1, size1, input2, size2, output);
-
-		for (int i = 0; i < outsize; ++i)
-		{
-			cout << output[i] << " ";
-		}
-
-		delete[] input1;
-		delete[] input2;
-		delete[] output;
+		delete[] arr;
 		cout << endl;
 	}
 
