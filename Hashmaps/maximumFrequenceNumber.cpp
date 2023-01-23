@@ -1,34 +1,22 @@
 #include <iostream>
 using namespace std;
-
-
-
-#include <map>
+#include <unordered_map>
 
 int highestFrequency(int arr[], int n) {
-    // Write your code here
-    map<int, int> max;
-//  this for loop will keep the count of each key in the value
-    for(int i = 0 ; i< n;  i++){
-        //  here the value of the respected key is incremented if it's repeated
-        //  as the default value is zero for each key
-        
-        max[arr[i]]++;
+    unordered_map<int, int> m;
+
+    for(int i = 0; i< n ; i++){
+        m[arr[i]]++;
     }
 
-// 
-    int key = 0;
-    int value = 0;
-    for(int i = 0;  i<n ; i++){
-
-        // if we fount some value that is greater than the previous
-        //  we simply update the value of
-        if(max[arr[i]] >  value){
-            key = arr[i];
-            value= max[arr[i]];
+    int maxcount = 0, res = -1;
+    for(int i = 0 ; i< m.size() ; i++){
+        if(m[arr[i]]> maxcount){
+            res = arr[i];
+            maxcount = m[arr[i]];
         }
     }
-    return key;
+    return res;
 }
 // #include "solution.h"
 
